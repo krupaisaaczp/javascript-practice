@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async practice</title>
+</head>
+<body>
+    <h1>Practicing Asynchronus function.</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setTimeout(()=>console.log("Isaac"), 2000) //Here it is stating that give me 2000ms i.e; 2 seconds to execute the function.
+    const changeTextWeb =() => document.querySelector('h1').innerHTML = "Practice the Async Func"
+    const changeText = () => setTimeout(changeTextWeb, 8000)
+    changeText()
+    document.querySelector('#stop').addEventListener('click', ()=>{
+         clearTimeout(changeText())
+         console.log("Stopped")
+    });
+</script>
+</html>

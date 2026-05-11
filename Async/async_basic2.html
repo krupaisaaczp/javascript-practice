@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Practice part 2</title>
+</head>
+<body>
+    <h1>Isaac is practicing the Asynchronous Functions</h1>
+    <button id="start">Start</button>
+    <button id="stop">
+        Stop
+    </button>
+</body>
+<script>
+    let i;
+    const date1 = (msg) => {
+        console.log("Async Pract", Date.now());
+        console.log(msg)
+    }
+    document.querySelector('#start').addEventListener('click', () =>{
+        i = setInterval(date1, 3000, "Hi");
+        console.log("working")
+    });
+    document.querySelector('#stop').addEventListener('click', () =>{
+        clearInterval(i)
+        console.log("stopped")
+    })
+
+</script>
+</html>
